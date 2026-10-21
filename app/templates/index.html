@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ app_title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">TL</div>
+        <div>
+          <div class="brand__name">{{ app_title }}</div>
+          <div class="brand__ver">v{{ version }}</div>
+        </div>
+      </div>
+      <div class="sidebar__label">Công việc</div>
+      <nav class="nav">
+        <button class="nav__item is-active" data-module="chatgpt">
+          <span class="nav__icon">◎</span> Tài khoản ChatGPT
+        </button>
+        <button class="nav__item is-disabled" disabled title="Thêm module mới trong app/modules">
+          <span class="nav__icon">＋</span> Task tiếp theo
+        </button>
+      </nav>
+      <div class="sidebar__foot">
+        <button class="btn" style="width:100%;justify-content:center" data-open-transfer>⇅ Chuyển máy / sao lưu</button>
+        <div class="backup-note">Tự sao lưu mỗi ngày (giữ 30 ngày). <button type="button" data-open-backups>Mở thư mục sao lưu</button></div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      {% include 'features/chatgpt.html' %}
+    </main>
+  </div>
+
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="toast-root" id="toastRoot"></div>
+
+  <script src="{{ url_for('static', filename='js/core.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/features/chatgpt.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/transfer.js') }}"></script>
+</body>
+</html>

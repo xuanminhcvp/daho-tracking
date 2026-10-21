@@ -1,0 +1,22 @@
+<section class="module" id="mod-chatgpt">
+  <header class="module__head">
+    <div>
+      <h1>Tài khoản ChatGPT</h1>
+      <p class="muted">Ai đang cầm tài khoản nào, tài khoản nào chờ bảo hành, đã hoàn tiền hay đã xoá.</p>
+    </div>
+    <div class="module__actions">
+      <button class="btn" data-act="new-account">＋ Thêm 1 tài khoản</button>
+      <button class="btn btn--primary" data-act="import">＋ Dán tài khoản</button>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab is-active" data-tab="accounts">Tài khoản <span class="tab__n" data-count="accounts"></span></button>
+    <button class="tab" data-tab="members">Thành viên <span class="tab__n" data-count="members"></span></button>
+    <button class="tab" data-tab="activity">Nhật ký</button>
+  </div>
+
+  <div class="panel" data-panel="accounts"></div>
+  <div class="panel" data-panel="members" hidden></div>
+  <div class="panel" data-panel="activity" hidden></div>
+</section>
